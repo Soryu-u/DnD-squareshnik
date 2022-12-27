@@ -1,0 +1,118 @@
+.main {
+    background-color: #2A1042;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+.link:hover {
+    font-size: 35px;
+}
+
+.container {
+    background-color:  #190b25;
+    box-shadow: 0px 0px 30px rgb(97, 95, 100);
+    border-radius: 13px;
+    padding: 50px 80px;
+    font-size: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(186, 32, 233);
+    text-shadow: 0 0 .20em rgb(186, 32, 233);
+}
+
+.form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.input {
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 20px;
+    padding: 5px 10px;
+    width: 350px;
+    height: 20px;
+    border-radius: 7px;
+}
+
+.validation {
+    margin-top: 5px;
+    font-size: 18px;
+    background-color: aliceblue;
+    color: red;
+    border-radius: 9px;
+    padding: 5px 15px;
+    width: max-content;
+}
+
+.footer {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer_link {
+    margin-top: 25px;
+    font-size: 18px;
+    text-decoration: underline;
+    color: #EFDEC2;
+}
+
+.footer_link:hover {
+    text-shadow: 0 0 .50em rgb(177, 170, 161);
+}
+
+.submit_button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: bold;
+    background-color: transparent;
+    border: rgb(186, 32, 233) 4px solid;
+    color: rgb(186, 32, 233);
+    cursor: pointer;
+    text-shadow: 0 0 .20em rgb(186, 32, 233);
+    box-shadow: inset 0 0 .5em 0 rgb(186, 32, 233), 0 0 .5em 0 rgb(186, 32, 233);
+}
+
+.submit_button:hover {
+    background-color: rgb(186, 32, 233);
+    color: white;
+}

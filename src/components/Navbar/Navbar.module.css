@@ -1,0 +1,16 @@
+.poster {
+    width: 100%;
+    height: 40vh;
+
+    object-fit: cover;
+
+    z-index: 1;
+    box-shadow: 0 2px 3px rgb(51, 51, 51);
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    
+}
