@@ -13,7 +13,7 @@ export default function App() {
 
   useEffect(() => {
     dispatch(getUser())
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles.App}>
