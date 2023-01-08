@@ -3,12 +3,11 @@ import styles from './Header.module.css'
 import { Link } from 'react-router-dom'
 import logo from '../../images/favicon.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { checkIsAuth, logout } from '../../redux/features/auth/authSlice'
+import { checkIsAuth, logout,  } from '../../redux/features/auth/authSlice'
 
-export const Header = () => {
+export const Header = ({user}) => {
   const isAuth = useSelector(checkIsAuth);
   const dispatch = useDispatch();
-  console.log(isAuth);
 
   const logoutHandler = () => {
     dispatch(logout);
@@ -26,7 +25,7 @@ export const Header = () => {
         {
           isAuth ? 
           <>
-          <Link className={styles.logoText} to='/profile'>Профіль</Link>
+          <Link className={styles.logoText} to='/profile'>{user.username}</Link>
           <Link className={styles.logoText} onClick={logoutHandler} to='#'>Вийти</Link>
           </>
           :

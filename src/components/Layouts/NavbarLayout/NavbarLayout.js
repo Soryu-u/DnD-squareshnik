@@ -1,10 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import styles from './Main.module.css'
+import Navbar from '../../Navbar/Navbar'
+import styles from './NavbarLayout.module.css'
 
-export const Main = () => {
+export const NavbarLayout = () => {
   return (
     <div className={styles.main}>
+        <Navbar/>
         <Outlet />
     </div>
   )

@@ -1,0 +1,11 @@
+.main {
+    margin-top: 50px;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: #3F0071;
+}

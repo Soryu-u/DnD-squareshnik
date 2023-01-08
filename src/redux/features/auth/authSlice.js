@@ -46,18 +46,17 @@ export const registerUser = createAsyncThunk(
         }
         )
 
-        export const getUser = createAsyncThunk(
-            'auth/loginUser', 
-            async() => {
-                try {
-                    const { data } = await axios.get('auth/user') 
-                    console.log(data)                   
-                    return data
-                } catch (error) {
-                    console.log(error);
-                }
+    export const getUser = createAsyncThunk(
+        'auth/loginUser', 
+        async() => {
+            try {
+                const { data } = await axios.get('auth/user')
+                return data
+            } catch (error) {
+                console.log(error);
             }
-            )
+        }
+        )
     
 
 export const authSlice = createSlice({
@@ -125,6 +124,7 @@ export const authSlice = createSlice({
 })
 
 export const checkIsAuth = state => Boolean(state.auth.token)
+export const userInfo = state => state.auth.user
 
 
 export const {logout} = authSlice.actions

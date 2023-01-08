@@ -1,5 +1,5 @@
 import React from 'react';
-import poster from '../../images/poster.jpg';
+import poster from '../../images/poster.png';
 import styles from './Navbar.module.css';
 
 
