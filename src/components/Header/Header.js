@@ -25,13 +25,13 @@ export const Header = ({user}) => {
         {
           isAuth ? 
           <>
-          <Link className={styles.logoText} to='/profile'>{user.username}</Link>
-          <Link className={styles.logoText} onClick={logoutHandler} to='#'>Вийти</Link>
+          <Link className={styles.link} to='/profile'>{user.username}</Link>
+          <Link className={styles.link} onClick={logoutHandler} to='#'>Вийти</Link>
           </>
           :
           <>
-            <Link className={styles.logoText} to='/sign_in'>Вхід</Link>
-            <Link className={styles.logoText} to='/register'>Реєстрація</Link>
+            <Link className={styles.link} to='/sign_in'>Вхід</Link>
+            <Link className={styles.link} to='/register'>Реєстрація</Link>
           </> 
         }
       </div>

@@ -1,0 +1,40 @@
+.characters_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_new_icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.add_new_icon:hover {
+    background-color: rgba(240, 248, 255, 0.082);
+    transform: scale(1.2);
+}
+
+.back {
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+.back:hover {
+    transform: scale(1.2);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}

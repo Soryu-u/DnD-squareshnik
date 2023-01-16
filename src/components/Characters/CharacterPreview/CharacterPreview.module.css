@@ -1,0 +1,18 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: 10px 0;
+    padding: 10px;
+
+    background-color: blueviolet;
+}
+
+.item_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}

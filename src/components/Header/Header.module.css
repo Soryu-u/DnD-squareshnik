@@ -26,7 +26,7 @@
     margin-left: 70px;
 }
 
-.logoText {
+.logoText, .link {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 24px;
@@ -35,5 +35,9 @@
     text-decoration: none;
     color: aliceblue;
     margin-right: 70px;
+}
+
+.link:hover {
+    color: red;
 }
 

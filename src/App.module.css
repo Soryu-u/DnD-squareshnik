@@ -1,4 +1,7 @@
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Comfortaa', cursive;
   background-color: #3F0071;
 }
