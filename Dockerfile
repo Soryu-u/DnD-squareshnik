@@ -9,4 +9,4 @@ FROM nginx:alpine AS prod
 COPY ./nginx/react.conf /etc/nginx/nginx.conf
 COPY --from=builder /app/build /usr/share/nginx/html
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+RUN ["nginx", "-g", "daemon off;"]
