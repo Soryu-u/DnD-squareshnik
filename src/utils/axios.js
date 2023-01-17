@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: `https://dnd-squareshnik-server.onrender.com`,
+    baseURL: `https://dnd-squareshnik-server.onrender.com/api`,
 })
 
 instance.interceptors.request.use(config => {
