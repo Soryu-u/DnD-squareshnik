@@ -10,13 +10,22 @@ import { userInfo, getUser } from './redux/features/auth/authSlice';
 import { UserProfile } from './pages/UserProfile/UserProfile';
 import { Characters } from './pages/Characters/Characters';
 
+import { useNavigate } from 'react-router-dom';
+
 export default function App() {
   const dispatch = useDispatch();
   const user = useSelector(userInfo);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(getUser());
-  }, [dispatch]);
+
+    navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'));
+    window.onbeforeunload = () => {
+        window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname));
+    }
+  }, [dispatch, navigate]);
   
   return (
     <>
