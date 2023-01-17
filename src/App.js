@@ -19,13 +19,15 @@ export default function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(getUser());
-
-    navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'));
+    navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'))
     window.onbeforeunload = () => {
-        window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname));
+        window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname))
     }
-  }, [dispatch, navigate]);
+}, [navigate]);
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
   
   return (
     <>
