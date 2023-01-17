@@ -5,18 +5,16 @@ import styles from './CharacterCreate.module.css';
 
 export const CharacterCreate = () => {
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [race, setRace] = useState('');
-  const [lvl, setLvl] = useState('');
+
+  const [character, setCharacter] = useState({
+    'name': '',
+    'race': '',
+    'level': '',
+  })
 
   const submitHandler = () => {
     try {
-      const data = {
-        'name': name,
-        'race': race,
-        'level': lvl
-      };
-      dispatch(createCharacter(data))
+      dispatch(createCharacter(character))
     } catch (error) {
       console.log(error);
     }
@@ -30,8 +28,8 @@ export const CharacterCreate = () => {
             Name
           </div>
           <input 
-            value={name} 
-            onChange={e => setName(e.target.value)} 
+            value={character.name} 
+            onChange={e => setCharacter({ ...character, name: e.target.value})} 
             type='text' 
           />
         </div>
@@ -40,8 +38,8 @@ export const CharacterCreate = () => {
             Race
           </div>
           <input 
-            value={race} 
-            onChange={e => setRace(e.target.value)} 
+            value={character.race} 
+            onChange={e => setCharacter({ ...character, race: e.target.value})} 
             type='text' 
           />
         </div>
@@ -50,8 +48,8 @@ export const CharacterCreate = () => {
             LvL
           </div>
           <input 
-            value={lvl} 
-            onChange={e => setLvl(e.target.value)} 
+            value={character.level} 
+            onChange={e => setCharacter({ ...character, level: e.target.value})} 
             type='number' 
           />
         </div>

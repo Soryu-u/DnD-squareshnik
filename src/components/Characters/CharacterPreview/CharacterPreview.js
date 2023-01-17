@@ -9,7 +9,7 @@ export const CharacterPreview = ( {character} ) => {
                 { character.name }
             </div>
             <div>
-                { character.lvl } lvl
+                { character.level } lvl
             </div>
         </div>
         <div>

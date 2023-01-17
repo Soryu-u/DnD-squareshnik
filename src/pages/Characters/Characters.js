@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Characters.module.css';
 import plus from '../../images/plus.png';
 import { CharacterPreview } from '../../components/Characters/CharacterPreview/CharacterPreview';
 import { CharacterCreate } from '../../components/Characters/CharacterCreate/CharacterCreate';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCharacters } from '../../redux/features/character/characterSlice';
 
 
 export const Characters = () => {
   const [isCreate, setIsCreate] = useState(false);
+  const { characters } = useSelector((state) => state.characters)
+  const dispatch = useDispatch();
 
-  const characters = [
-    {
-      name: 'szpaku',
-      race: 'Dwarf',
-      lvl: '1'
-    },
-    {
-      name: 'Soryu',
-      race: 'Elf',
-      lvl: '3'
-    },
-  ]
-
+  useEffect(() => {
+    dispatch(getAllCharacters());
+  }, [dispatch])
 
   return (
     <>

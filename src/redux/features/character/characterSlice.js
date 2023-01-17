@@ -9,8 +9,16 @@ const initialState = {
 export const createCharacter = createAsyncThunk('characters/createCharacter', async(params) => {
     try {
         const { data } = await axios.post('/characters', params);
-        console.log(params)
         return data
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+export const getAllCharacters = createAsyncThunk('characters/getAllCharacters', async () => {
+    try {
+        const { data } = await axios.get('/characters');
+        return data;
     } catch (error) {
         console.log(error);
     }
@@ -29,6 +37,17 @@ export const characterSlice = createSlice({
             state.characters.push(action.payload)
         },
         [createCharacter.rejected]: (state) => {
+            state.loading = false
+        },
+
+        [getAllCharacters.pending]: (state) => {
+            state.loading = true
+        },
+        [getAllCharacters.fulfilled]: (state, action) => {
+            state.loading = false
+            state.characters = action.payload.characters
+        },
+        [getAllCharacters.rejected]: (state) => {
             state.loading = false
         },
     },
