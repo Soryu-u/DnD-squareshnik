@@ -22,7 +22,7 @@ export const Header = ({ user }) => {
                 src={menu}
                 alt=""
             />
-            {showMenuList && <MenuList user={user} />}
+            {showMenuList && styles.hamburger &&<MenuList user={user} />}
 
             <div className={styles.right_bar}>
                 <UserLogin user={user} />
@@ -56,12 +56,12 @@ function UserLogin({ user }) {
                     <Link className={styles.link} to="/profile">
                         {user.username}
                     </Link>
-                    <img
+                    <Link
                         className={styles.log_out}
                         onClick={logoutHandler}
-                        src={log_out}
-                        alt="Вийти"
-                    />
+                    >
+                        Вийти
+                    </Link>
                 </>
             ) : (
                 <>
