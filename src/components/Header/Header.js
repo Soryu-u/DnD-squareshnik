@@ -3,7 +3,6 @@ import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import logo from '../../images/favicon.png';
 import menu from '../../images/menu.png';
-import log_out from '../../images/log-out.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkIsAuth, logout } from '../../redux/features/auth/authSlice';
 import useComponentVisible from '../../utils/useComponentVisible';
