@@ -11,8 +11,6 @@ import useComponentVisible from '../../utils/useComponentVisible';
 export const Header = ({ user }) => {
     const [showMenuList, setShowMenuList] = useState(false);
 
-
-    console.log(showMenuList);
     return (
         <div className={styles.header}>
             <Link className={styles.logo_bar} to="/">
