@@ -19,6 +19,13 @@
     margin-right: 10px;
 }
 
+.hamburger {
+    display: none;
+    width: 40px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
 .logo_bar {
     display: flex;
     flex-direction: row;
@@ -26,10 +33,23 @@
     margin-left: 70px;
 }
 
-.logoText, .link {
+.right_bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.log_out {
+    width: 30px;
+    cursor: pointer;
+    margin: 0 70px 0 20px;
+}
+
+.logo_text, .link {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 24px;
+    height: 50px;
     
     cursor: pointer;
     text-decoration: none;
@@ -41,3 +61,34 @@
     color: red;
 }
 
+.menu_list {
+    position: fixed;
+    top: 50px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: black;
+
+    width: 100%;
+}
+
+.menu_list > .link {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: unset;
+    }
+    
+    .logo_bar {
+        margin-left: 30px;
+    }
+
+    .logo_text, .right_bar {
+        display: none;
+    }
+}
