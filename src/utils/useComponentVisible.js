@@ -6,7 +6,7 @@ export default function useComponentVisible(setInitialIsVisible) {
     const handleClickOutside = (event) => {
         if (ref.current && !ref.current.contains(event.target)) {
             setTimeout(() => {
-                setInitialIsVisible(false)
+                setInitialIsVisible(false);
             }, 1);
         }
     };

@@ -39,12 +39,12 @@ function MenuList({ user, setShowMenuList }) {
 
     return (
         <div ref={ref} className={styles.menu_list}>
-            <UserLogin user={user} />
+            <UserLogin setShowMenuList={setShowMenuList} user={user} />
         </div>
     );
 }
 
-function UserLogin({ user }) {
+function UserLogin({ user, setShowMenuList }) {
     const isAuth = useSelector(checkIsAuth);
     const dispatch = useDispatch();
 
@@ -58,7 +58,7 @@ function UserLogin({ user }) {
         <>
             {isAuth ? (
                 <>
-                    <Link className={styles.link} to="/profile">
+                    <Link className={styles.link} onClick={() => setShowMenuList(false)} to="/profile">
                         {user.username}
                     </Link>
                     <div className={styles.link} onClick={logoutHandler}>
@@ -67,10 +67,10 @@ function UserLogin({ user }) {
                 </>
             ) : (
                 <>
-                    <Link className={styles.link} to="/sign_in">
+                    <Link className={styles.link} onClick={() => setShowMenuList(false)} to="/sign_in">
                         Вхід
                     </Link>
-                    <Link className={styles.link} to="/register">
+                    <Link className={styles.link} onClick={() => setShowMenuList(false)} to="/register">
                         Реєстрація
                     </Link>
                 </>
