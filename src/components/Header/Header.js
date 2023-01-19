@@ -6,10 +6,13 @@ import menu from '../../images/menu.png';
 import log_out from '../../images/log-out.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkIsAuth, logout } from '../../redux/features/auth/authSlice';
+import useComponentVisible from '../../utils/useComponentVisible';
 
 export const Header = ({ user }) => {
     const [showMenuList, setShowMenuList] = useState(false);
 
+
+    console.log(showMenuList);
     return (
         <div className={styles.header}>
             <Link className={styles.logo_bar} to="/">
@@ -22,7 +25,9 @@ export const Header = ({ user }) => {
                 src={menu}
                 alt=""
             />
-            {showMenuList && styles.hamburger &&<MenuList user={user} />}
+            {showMenuList && (
+                <MenuList setShowMenuList={setShowMenuList} user={user} />
+            )}
 
             <div className={styles.right_bar}>
                 <UserLogin user={user} />
@@ -31,9 +36,11 @@ export const Header = ({ user }) => {
     );
 };
 
-function MenuList({ user }) {
+function MenuList({ user, setShowMenuList }) {
+    const { ref } = useComponentVisible(setShowMenuList);
+
     return (
-        <div className={styles.menu_list}>
+        <div ref={ref} className={styles.menu_list}>
             <UserLogin user={user} />
         </div>
     );
@@ -56,12 +63,9 @@ function UserLogin({ user }) {
                     <Link className={styles.link} to="/profile">
                         {user.username}
                     </Link>
-                    <Link
-                        className={styles.log_out}
-                        onClick={logoutHandler}
-                    >
+                    <div className={styles.link} onClick={logoutHandler}>
                         Вийти
-                    </Link>
+                    </div>
                 </>
             ) : (
                 <>
