@@ -1,6 +1,6 @@
 .dice_widget {
     position: fixed;
-    bottom: 70px;
+    bottom: 100px;
     right: 130px;
     cursor: pointer;
     user-select: none;
@@ -11,7 +11,7 @@
 }
 
 .dice_darker {
-    filter: brightness(.5);
+    filter: brightness(.4);
 }
 
 .dices {
@@ -21,8 +21,9 @@
 }
 
 .dice {
-    background-color: blueviolet;
+    background-color: rgb(194, 145, 240);
     box-shadow: 0 0 10px rgb(27, 27, 27);
+    border: solid 5px black;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -30,6 +31,24 @@
     justify-content: center;
     align-items: center;
     position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 40px;
+}
+
+.roll {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .selected_dice {
@@ -41,19 +60,51 @@
     width: 25px;
     height: 25px;
     color: black;
+    font-size: 20px;
     font-weight: bold;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
-.d4 {
+.d20 {
     top: -125px;
-    left: -30px;
+    left: -34px;
+}
+
+.d12 {
+    top: -103px;
+    left: 30px;
+}
+
+.d10 {
+    top: 26px;
+    left: 30px;
+}
+
+.d100 {
+    top: -39px;
+    left: 51px;
+}
+
+.d8 {
+    top: 50px;
+    left: -34px;
 }
 
 .d6 {
-    top: -75px;
-    left: 60px;
+    top: 26px;
+    left: -100px;
+}
+
+.d4 {
+    top: -40px;
+    left: -122px;
+}
+
+.d2 {
+    top: -103px;
+    left: -98px;
 }
