@@ -1,0 +1,119 @@
+.dice_widget {
+    position: fixed;
+    bottom: 100px;
+    right: 130px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 3;
+}
+
+.dice_image {
+    width: 90px;
+}
+
+.dice_darker {
+    filter: brightness(.4);
+}
+
+.dices {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.dice {
+    background-color: rgb(194, 145, 240);
+    box-shadow: 0 0 10px rgb(27, 27, 27);
+    border: solid 5px black;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 40px;
+}
+
+.roll {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.selected_dice {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    width: 25px;
+    height: 25px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.d20 {
+    top: -125px;
+    left: -34px;
+}
+
+.d12 {
+    top: -103px;
+    left: 30px;
+}
+
+.d10 {
+    top: 26px;
+    left: 30px;
+}
+
+.d100 {
+    top: -39px;
+    left: 51px;
+}
+
+.d8 {
+    top: 50px;
+    left: -34px;
+}
+
+.d6 {
+    top: 26px;
+    left: -100px;
+}
+
+.d4 {
+    top: -40px;
+    left: -122px;
+}
+
+.d2 {
+    top: -103px;
+    left: -98px;
+}
+
+@media screen and (max-width: 768px) {
+    .dice_widget {
+        bottom: 28px;
+        right: 34px;
+        scale: .6;
+    }
+}
