@@ -4,7 +4,7 @@ import dice from '../../../images/dice.png';
 import close from '../../../images/close.png';
 import useComponentVisible from '../../../utils/useComponentVisible';
 
-export const DiceWidget = () => {
+export const DiceWidget = ({ submitRoll }) => {
     const [showDices, setShowDices] = useState(false);
     const { ref } = useComponentVisible(setShowDices, closeWidget);
     const [roll, setRoll] = useState(false);
@@ -81,7 +81,7 @@ export const DiceWidget = () => {
             }
         });
         closeWidget();
-        return console.log(result);
+        return result;
     }
 
     return (
@@ -109,7 +109,7 @@ export const DiceWidget = () => {
                 <div
                     className={styles.roll}
                     onClick={() => {
-                        randomize();
+                        submitRoll(randomize());
                     }}
                 >
                     roll

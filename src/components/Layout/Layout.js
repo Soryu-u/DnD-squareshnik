@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { checkIsAuth } from '../../redux/features/auth/authSlice';
 import { Header } from '../Header/Header';
 import { DiceWidget } from '../Widgets/DiceWidget/DiceWidget';
 import styles from './Layout.module.css';
 import { useSelector } from 'react-redux';
+import { useNotification } from '../Widgets/DiceWidget/Notification';
 
 export const Layout = (props) => {
     const isAuth = useSelector(checkIsAuth);
+    const notification = useNotification();
+    const [dices, setDices] = useState();
+
+    function submitRoll(result) {
+        notification.open(result);
+    }
 
     return (
         <>
@@ -15,7 +22,7 @@ export const Layout = (props) => {
             <div className={styles.main}>
                 <Outlet />
                 {/* { isAuth && <DiceWidget /> } */}
-                <DiceWidget />
+                <DiceWidget submitRoll={submitRoll} />
             </div>
         </>
     );
