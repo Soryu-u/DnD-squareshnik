@@ -4,6 +4,7 @@
     right: 130px;
     cursor: pointer;
     user-select: none;
+    z-index: 3;
 }
 
 .dice_image {
@@ -66,7 +67,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 3;
 }
 
 .d20 {
@@ -107,4 +108,12 @@
 .d2 {
     top: -103px;
     left: -98px;
+}
+
+@media screen and (max-width: 768px) {
+    .dice_widget {
+        bottom: 28px;
+        right: 34px;
+        scale: .6;
+    }
 }

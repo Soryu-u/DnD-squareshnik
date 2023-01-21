@@ -1,6 +1,5 @@
 .wrapper {
     position: fixed;
-    position: fixed;
     left: 30px;
     bottom: 30px;
 
@@ -72,3 +71,11 @@
     font-size: 26px;
 }
 
+@media screen and (max-width: 768px) {
+    .wrapper {
+        left: -30px;
+        bottom: -50px;
+        scale: .6;
+    }
+
+}
