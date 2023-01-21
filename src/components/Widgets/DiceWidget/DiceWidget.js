@@ -64,7 +64,6 @@ export const DiceWidget = ({ submitRoll }) => {
             const random = [];
             if (element.count > 0) {
                 if (element.dice === 100) {
-                    console.log('zxc');
                     for (let i = 1; i <= element.count; i++) {
                         random.push(
                             Math.floor((Math.random() * (10 - 1 + 1) + 1)) * 10
