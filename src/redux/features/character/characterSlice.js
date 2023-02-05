@@ -31,7 +31,7 @@ export const getAllCharacters = createAsyncThunk(
 );
 
 export const getMyCharacters = createAsyncThunk(
-    'characters/getAllCharacters',
+    'characters/getMyCharacters',
     async () => {
         try {
             const { data } = await axios.get('/characters/own');
@@ -47,6 +47,7 @@ export const deleteCharacter = createAsyncThunk(
     async (id) => {
         try {
             const data = await axios.delete(`characters/${id}`, id);
+            console.log(data);
             return data;
         } catch (error) {
             console.log(error);
@@ -98,7 +99,7 @@ export const characterSlice = createSlice({
         [deleteCharacter.fulfilled]: (state, action) => {
             state.loading = false;
             state.characters = state.characters.filter(
-                (character) => character._id !== action.payload._id
+                (character) => character._id !== action.payload.data.id
             );
         },
         [deleteCharacter.rejected]: (state) => {
