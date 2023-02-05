@@ -11,7 +11,6 @@ export const CharacterPreview = ({ character }) => {
     const deleteCharacterHandler = () => {
         try {
             dispatch(deleteCharacter(character._id));
-            window.location.reload();
         } catch (error) {
             console.log(error);
         }
