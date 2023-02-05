@@ -47,7 +47,6 @@ export const deleteCharacter = createAsyncThunk(
     async (id) => {
         try {
             const data = await axios.delete(`characters/${id}`, id);
-            console.log(data);
             return data;
         } catch (error) {
             console.log(error);
