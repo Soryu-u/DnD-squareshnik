@@ -2,14 +2,24 @@ import React, { useEffect, useState } from 'react';
 import styles from './Characters.module.css';
 import plus from '../../images/plus.png';
 import { CharacterPreview } from '../../components/Characters/CharacterPreview/CharacterPreview';
-import { CharacterCreate } from '../../components/Characters/CharacterCreate/CharacterCreate';
+import { createCharacter } from '../../redux/features/character/characterSlice'
 import { useDispatch, useSelector } from 'react-redux';
 import { getMyCharacters } from '../../redux/features/character/characterSlice';
+import { CharacterPage } from '../CharacterPage/CharacterPage';
 
 export const Characters = () => {
     const [isCreate, setIsCreate] = useState(false);
     const { characters } = useSelector((state) => state.characters);
     const dispatch = useDispatch();
+
+    const create = () => {
+        try {
+            dispatch(createCharacter({ name: 'Name' }));
+            setIsCreate(true);
+        } catch (error) {
+            
+        }
+    }
 
     useEffect(() => {
         dispatch(getMyCharacters());
@@ -24,7 +34,7 @@ export const Characters = () => {
                             character !== null && (
                                 <CharacterPreview
                                     key={
-                                        character.name + character.race + index
+                                        character.name + index
                                     }
                                     character={character}
                                 />
@@ -35,23 +45,11 @@ export const Characters = () => {
                         className={styles.add_new_icon}
                         src={plus}
                         alt="+"
-                        onClick={() => {
-                            setIsCreate(true);
-                        }}
+                        onClick={create}
                     />
                 </div>
             ) : (
-                <div className={styles.content}>
-                    <div
-                        className={styles.back}
-                        onClick={() => {
-                            setIsCreate(false);
-                        }}
-                    >
-                        Back
-                    </div>
-                    <CharacterCreate setIsCreate={setIsCreate} />
-                </div>
+                <CharacterPage />
             )}
         </>
     );

@@ -11,10 +11,11 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
+    background-color: rgba(46, 46, 46, 0.082);
 }
 
 .add_new_icon:hover {
-    background-color: rgba(240, 248, 255, 0.082);
+    background-color: rgba(18, 18, 18, 0.082);
     transform: scale(1.2);
 }
 

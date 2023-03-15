@@ -28,6 +28,8 @@ export default function App() {
               <Route path="/" element={ <HomePage /> }/>
               <Route path="/profile" element={ <UserProfile /> }/>  
               <Route path="/characters" element={ <Characters /> }/>
+              <Route path="/tables" element={ <div>Ігрові столи</div> }/>
+              <Route path="/game" element={ <div>game</div> }/>
             </Route>
             <Route path="/register" element={ <Registration /> }/>
             <Route path="/sign_in" element={ <Login /> }/>

@@ -9,8 +9,8 @@
 
     width: 100%;
     height: 50px;
-    background-color: black;
-    box-shadow: 0 0 10px rgb(27, 27, 27);
+    background: #212121;
+    border-bottom: 3px solid #FFFFFF;
     z-index: 2;
 
     user-select: none;

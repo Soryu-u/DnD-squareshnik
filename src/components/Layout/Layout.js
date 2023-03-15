@@ -6,6 +6,8 @@ import { DiceWidget } from '../Widgets/DiceWidget/DiceWidget';
 import styles from './Layout.module.css';
 import { useSelector } from 'react-redux';
 import { useNotification } from '../Widgets/DiceWidget/Notification';
+import Navbar from '../Navbar/Navbar';
+import background from '../../images/page_background.png';
 
 export const Layout = (props) => {
     const isAuth = useSelector(checkIsAuth);
@@ -19,9 +21,10 @@ export const Layout = (props) => {
     return (
         <>
             <Header user={props.user} />
+            <Navbar />
             <div className={styles.main}>
+                <div className={styles.blur}></div>
                 <Outlet />
-                {/* { isAuth && <DiceWidget /> } */}
                 <DiceWidget submitRoll={submitRoll} />
             </div>
         </>

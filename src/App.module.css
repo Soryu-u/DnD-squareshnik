@@ -3,8 +3,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Comfortaa', cursive;
-  background-color: #3F0071;
 }
+
 
 ::-webkit-scrollbar {
   width: 10px;
